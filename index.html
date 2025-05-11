@@ -1,22 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="example.js"></script>
+    <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+    <!-- <script src="main.js"></script> -->
+    <!-- <script type="module" src="main.js"></script> -->
     <!-- <script type="module" src="style.css"></script> -->
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>Data Visualization</title>
+    <style>
+        svg {
+            border: 1px solid #333;
+            margin: 10px;
+        }
+
+        .gauge-container {
+            display: inline-block;
+        }
+    </style>
 
 </head>
-<body onload="main()">
-    <h1>Welcome to Data Visualization</h1>
+<!-- <body onload="main()"> -->
+
+<body>
+
+    <div class="gauge-container">
+        <h3 style="text-align: center;">CPU Usage</h3>
+        <div id="gauge1"></div>
+    </div>
+
+    <div class="gauge-container">
+        <h3 style="text-align: center;">Memory Usage</h3>
+        <div id="gauge2"></div>
+    </div>
+
+    <div class="gauge-container">
+        <h3 style="text-align: center;">Disk Usage</h3>
+        <div id="gauge3"></div>
+    </div>
+
+
+    <!-- <div class="gauge-container" id="gauge1"></div>
+    <div class="gauge-container" id="gauge2"></div>
+    <div class="gauge-container" id="gauge3"></div> -->
+    <!-- <div id="gauge"></div> -->
+    <script type="module" src="main.js"></script>
+    <!-- <h1>Welcome to Data Visualization</h1>
     <p>I hope you will enjoy this page!</p>
     <div id="tooltip" class="hidden">
         <p><strong>PUE Value</strong></p>
         <p><span id="value">1.5</span></p>
     </div>
-    <svg width="1200" height="600"></svg>
+    <svg width="1200" height="600"></svg> -->
 </body>
+
 </html>
 
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3 Gauge with Needle</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <svg id="gauge" width="300" height="200"></svg>
+</body>
+</html>
+ -->
+
+
+
+
+<!-- 
+
+ <!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/justgage"></script>
+</head>
+<body>
+  <div id="gauge" style="width:200px; height:160px;"></div>
+
+  <script>
+    const gauge = new JustGage({
+      id: "gauge",
+      value: 70,
+      min: 0,
+      max: 100,
+      title: "Speed",
+      label: "km/h"
+    });
+  </script>
+
+
+<canvas id="gaugeCanvas" width="300" height="150"></canvas>
+
+<script>
+  function drawGauge(value) {
+    const canvas = document.getElementById("gaugeCanvas");
+    const ctx = canvas.getContext("2d");
+    const radius = 100;
+    const centerX = 150;
+    const centerY = 150;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Background arc
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, Math.PI, 2 * Math.PI);
+    ctx.strokeStyle = "#ccc";
+    ctx.lineWidth = 20;
+    ctx.stroke();
+
+    // Value arc
+    const angle = Math.PI + (value / 100) * Math.PI;
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, Math.PI, angle);
+    ctx.strokeStyle = "#00bfff";
+    ctx.lineWidth = 20;
+    ctx.stroke();
+
+    // Text
+    ctx.font = "20px Arial";
+    ctx.fillStyle = "#000";
+    ctx.textAlign = "center";
+    ctx.fillText(value + "%", centerX, centerY - 20);
+  }
+
+  drawGauge(25); // Set value between 0 and 100
+</script>
+
+
+
+
+</body>
+</html>
+ -->
