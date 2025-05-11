@@ -1,4 +1,4 @@
-import * as d3 from "d3";
+// import * as d3 from "d3";
 
 function drawGauge(selector, value, title) {
     const width = 200;
